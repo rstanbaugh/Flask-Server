@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block title %}Profile{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card shadow-sm p-3 mb-5 bg-white rounded">
+                <div class="card-body">
+                    <h2 class="card-title text-primary">User Profile</h2>
+                    <p class="card-text"><strong>Name:</strong> John Doe</p>
+                    <p class="card-text"><strong>Email:</strong> john@example.com</p>
+                    <p class="card-text"><strong>Member Since:</strong> January 2022</p>
+                    <a href="/" class="btn btn-primary">Back to Home</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

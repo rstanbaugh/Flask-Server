@@ -1,0 +1,29 @@
+/* Ensure the page has a modern look with a blue-toned theme */
+body {
+    background-color: #f8f9fa;
+    font-family: 'Roboto', sans-serif;
+}
+
+/* Custom styling for Bootstrap components */
+.navbar {
+    background-color: #007bff !important; /* Keep primary blue tone */
+}
+
+.card {
+    border-radius: 10px;
+}
+
+.card-title {
+    font-weight: 700;
+    color: #007bff;
+}
+
+.btn-primary {
+    background-color: #0056b3;
+    border-color: #0056b3;
+}
+
+.btn-primary:hover {
+    background-color: #004494;
+    border-color: #004494;
+}
