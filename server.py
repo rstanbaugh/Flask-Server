@@ -1,5 +1,5 @@
 # conda environment flask
-# python version 3.11.8
+# python version 3.11.2
 
 from flask import Flask
 from routes.routes import routes_bp
