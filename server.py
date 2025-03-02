@@ -1,3 +1,6 @@
+# conda environment flask
+# python version 3.11.8
+
 from flask import Flask
 from routes.routes import routes_bp
 
