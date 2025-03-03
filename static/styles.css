@@ -6,19 +6,34 @@ body {
     background-color: #f8f9fa; /* Light gray background */
 }
 
-/* Navbar Styling */
+/* --- Navbar Hover Effect Without Resizing --- */
 .navbar {
     background-color: #007bff; /* Primary blue */
+    height: 56px; /* Fix navbar height to prevent resizing */
 }
 
+/* Navbar Brand & Links */
 .navbar-brand, .nav-link {
     color: #ffffff !important;
     transition: font-size 0.2s ease-in-out, text-shadow 0.2s ease-in-out;
 }
 
-/* Optimized Navbar Hover Effect */
+/* Keep navbar brand aligned */
+.navbar-brand {
+    font-size: 1.3rem; /* Slightly larger than links */
+    line-height: 56px; /* Keeps it centered */
+}
+
+/* Optimized Hover Effect */
+.navbar-nav .nav-item .nav-link {
+    transition: font-size 0.2s ease-in-out, text-shadow 0.2s ease-in-out;
+    line-height: 56px; /* Keeps text aligned inside fixed navbar height */
+    padding: 0 15px; /* Maintain padding */
+}
+
 .navbar-nav .nav-item .nav-link:hover,
-.navbar-nav .nav-item .nav-link:focus {
+.navbar-nav .nav-item .nav-link:focus,
+.navbar-brand:hover {
     font-size: 1.1rem; /* Slight increase in size for pop effect */
     text-shadow: 1px 1px 4px rgba(255, 255, 255, 0.7); /* Subtle glow effect */
 }
