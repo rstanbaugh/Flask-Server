@@ -1,4 +1,4 @@
-/* --- Updated Styles with Optimized Hover Effects --- */
+/* --- Updated Styles with Optimized Hover Effects (Desktop-Only Magnify) --- */
 
 /* General Page Styling */
 body {
@@ -6,10 +6,10 @@ body {
     background-color: #f8f9fa; /* Light gray background */
 }
 
-/* --- Navbar Hover Effect Without Resizing --- */
+/* --- Navbar Styling --- */
 .navbar {
     background-color: #007bff; /* Primary blue */
-    height: 56px; /* Fix navbar height to prevent resizing */
+    height: 56px; /* Fixed height to prevent resizing */
 }
 
 /* Navbar Brand & Links */
@@ -24,21 +24,28 @@ body {
     line-height: 56px; /* Keeps it centered */
 }
 
-/* Optimized Hover Effect */
-.navbar-nav .nav-item .nav-link {
-    transition: font-size 0.2s ease-in-out, text-shadow 0.2s ease-in-out;
-    line-height: 56px; /* Keeps text aligned inside fixed navbar height */
-    padding: 0 15px; /* Maintain padding */
+/* --- Enable Hover Magnify Effect on Desktop Only --- */
+@media (hover: hover) { 
+    .navbar-nav .nav-item .nav-link:hover,
+    .navbar-nav .nav-item .nav-link:focus,
+    .navbar-brand:hover {
+        font-size: 1.1rem; /* Slight increase in size for pop effect */
+        text-shadow: 1px 1px 4px rgba(255, 255, 255, 0.7); /* Subtle glow effect */
+    }
 }
 
-.navbar-nav .nav-item .nav-link:hover,
-.navbar-nav .nav-item .nav-link:focus,
-.navbar-brand:hover {
-    font-size: 1.1rem; /* Slight increase in size for pop effect */
-    text-shadow: 1px 1px 4px rgba(255, 255, 255, 0.7); /* Subtle glow effect */
+/* --- Fix for iPhone Safari: Ensure Mobile Menu Expands Properly --- */
+@media (max-width: 991px) {
+    .navbar-collapse {
+        display: none; /* Hide by default */
+    }
+
+    .navbar-collapse.show {
+        display: block !important; /* Force Bootstrap menu to expand */
+    }
 }
 
-/* Button Styling */
+/* --- Button Styling --- */
 .btn {
     transition: background-color 0.3s ease-in-out, transform 0.2s ease-in-out;
 }
@@ -48,7 +55,7 @@ body {
     transform: scale(1.05); /* Zoom effect */
 }
 
-/* Card Styling for Consistency */
+/* --- Card Styling for Consistency --- */
 .card {
     border-radius: 8px;
     box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
@@ -57,5 +64,3 @@ body {
 .card:hover {
     box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.2);
 }
-
-/* Cleanup of Unnecessary Styles */
