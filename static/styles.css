@@ -1,31 +1,24 @@
-/* --- Updated Styles with Optimized Hover Effects (Desktop-Only Magnify) --- */
-
-/* General Page Styling */
+/* --- General Page Styling --- */
 body {
     font-family: 'Roboto', sans-serif;
     background-color: #f8f9fa; /* Light gray background */
 }
 
-/* --- Navbar Styling --- */
+/* --- General Navbar Styling --- */
 .navbar {
     background-color: #007bff; /* Primary blue */
-    height: 56px; /* Fixed height to prevent resizing */
+    height: 56px; /* Fixed height to prevent page jumping */
+    padding: 0.5rem 1rem; /* Adjust padding */
 }
 
 /* Navbar Brand & Links */
 .navbar-brand, .nav-link {
     color: #ffffff !important;
-    transition: font-size 0.2s ease-in-out, text-shadow 0.2s ease-in-out;
+    transition: text-shadow 0.2s ease-in-out, font-size 0.2s ease-in-out;
 }
 
-/* Keep navbar brand aligned */
-.navbar-brand {
-    font-size: 1.3rem; /* Slightly larger than links */
-    line-height: 56px; /* Keeps it centered */
-}
-
-/* --- Enable Hover Magnify Effect on Desktop Only --- */
-@media (hover: hover) { 
+/* --- Desktop Only Hover Effect (Prevents Mobile Issues) --- */
+@media (hover: hover) {
     .navbar-nav .nav-item .nav-link:hover,
     .navbar-nav .nav-item .nav-link:focus,
     .navbar-brand:hover {
@@ -34,25 +27,43 @@ body {
     }
 }
 
-/* --- Fix for iPhone Safari: Ensure Mobile Menu Expands Properly --- */
+/* --- Mobile-Specific Fixes --- */
 @media (max-width: 991px) {
+    .navbar {
+        height: auto; /* Allow height to adjust on mobile */
+        padding: 0.5rem; /* Reduce padding */
+    }
+
     .navbar-collapse {
-        display: none; /* Hide by default */
+        display: none !important; /* Hide by default */
+        width: 100%;
+        position: absolute;
+        top: 56px;
+        left: 0;
+        background-color: #007bff;
+        z-index: 1000;
     }
 
     .navbar-collapse.show {
-        display: block !important; /* Force Bootstrap menu to expand */
+        display: block !important;
+        width: 100%;
+    }
+
+    /* Disable hover effect on mobile */
+    .navbar-nav .nav-item .nav-link:hover {
+        font-size: 1rem !important;
+        text-shadow: none !important;
     }
 }
 
-/* --- Button Styling --- */
+/* --- Button Hover Effect --- */
 .btn {
     transition: background-color 0.3s ease-in-out, transform 0.2s ease-in-out;
 }
 
 .btn:hover {
-    background-color: #0056b3 !important; /* Slightly darker blue */
-    transform: scale(1.05); /* Zoom effect */
+    background-color: #0056b3 !important;
+    transform: scale(1.05);
 }
 
 /* --- Card Styling for Consistency --- */
