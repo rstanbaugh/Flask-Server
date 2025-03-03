@@ -27,3 +27,27 @@ body {
     background-color: #004494;
     border-color: #004494;
 }
+
+
+/* --- Updated CSS: Hover Effects --- */
+
+/* Navigation Menu Hover Effect */
+.navbar-nav .nav-item .nav-link {
+    transition: color 0.3s ease-in-out, background-color 0.3s ease-in-out;
+}
+
+.navbar-nav .nav-item .nav-link:hover {
+    color: #ffffff !important;
+    background-color: #007bff !important; /* Bootstrap Primary Blue */
+    border-radius: 5px;
+}
+
+/* Button Hover Effect */
+.btn {
+    transition: background-color 0.3s ease-in-out, transform 0.2s ease-in-out;
+}
+
+.btn:hover {
+    background-color: #0056b3 !important; /* Slightly darker blue */
+    transform: scale(1.05); /* Slight zoom-in effect */
+}
