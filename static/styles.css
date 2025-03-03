@@ -11,10 +11,22 @@ body {
     padding: 0.5rem 1rem; /* Adjust padding */
 }
 
-/* Navbar Brand & Links */
-.navbar-brand, .nav-link {
+/* Navbar Brand */
+.navbar-brand {
     color: #ffffff !important;
     transition: text-shadow 0.2s ease-in-out, font-size 0.2s ease-in-out;
+}
+
+/* Navbar Links (Menu Items) */
+.navbar-nav .nav-item .nav-link {
+    transition: text-shadow 0.2s ease-in-out, font-size 0.2s ease-in-out;
+}
+
+/* ✅ Apply Left Padding ONLY on Mobile */
+@media (max-width: 991px) {
+    .navbar-nav .nav-item .nav-link {
+        padding-left: 15px; /* Adds spacing from the left */
+    }
 }
 
 /* --- Desktop Only Hover Effect (Prevents Mobile Issues) --- */
