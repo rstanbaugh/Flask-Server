@@ -1,5 +1,7 @@
 # conda environment flask
 # python version 3.11.2
+# plan to deploy on raspberry pi
+# will use nginx on pi for reverse proxy ssl
 
 from flask import Flask
 from routes.routes import routes_bp
