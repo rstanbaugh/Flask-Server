@@ -1,4 +1,6 @@
 from flask import Blueprint, render_template, jsonify, url_for
+from sensors.tempest import get_weather  # Import correct function
+
 
 routes_bp = Blueprint("routes", __name__)
 
@@ -9,6 +11,21 @@ def index():
 @routes_bp.route("/about")
 def about():
     return render_template("profile.html", name="About Us")
+
+@routes_bp.route("/api/weather")
+def api_weather():
+    """API endpoint to fetch and return weather data."""
+    weather_data = get_weather()
+    return jsonify(weather_data)
+
+@routes_bp.route("/weather")
+def weather_page():
+    """Render the weather page with live data."""
+    weather_data = get_weather()  # Get latest weather data
+    if not weather_data:
+        weather_data = {"error": "No weather data available"}  # Fallback message
+    return render_template("weather.html", weather=weather_data)
+
 
 @routes_bp.route("/profile/<username>")
 def show_profile(username):
