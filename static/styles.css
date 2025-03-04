@@ -11,10 +11,21 @@ body {
     padding: 0.5rem 1rem; /* Adjust padding */
 }
 
-/* Navbar Brand */
+/* Navbar Brand (RSM) - No Hover Effect */
 .navbar-brand {
     color: #ffffff !important;
-    transition: text-shadow 0.2s ease-in-out, font-size 0.2s ease-in-out;
+    text-shadow: none !important;
+    font-size: 1rem !important;
+    transition: none !important;
+    pointer-events: auto !important;
+}
+
+.navbar-brand:hover,
+.navbar-brand:focus {
+    color: #ffffff !important;
+    text-shadow: none !important;
+    font-size: 1rem !important;
+    transform: none !important;
 }
 
 /* Navbar Links (Menu Items) */
@@ -33,10 +44,9 @@ body {
 /* --- Desktop Only Hover Effect (Prevents Mobile Issues) --- */
 @media (hover: hover) {
     .navbar-nav .nav-item .nav-link:hover,
-    .navbar-nav .nav-item .nav-link:focus,
-    .navbar-brand:hover {
-        font-size: 1.1rem; /* Slight increase in size for pop effect */
-        text-shadow: 1px 1px 4px rgba(255, 255, 255, 0.7); /* Subtle glow effect */
+    .navbar-nav .nav-item .nav-link:focus {
+        font-size: 1.1rem !important; /* Slight increase in size for pop effect */
+        text-shadow: 1px 1px 4px rgba(255, 255, 255, 0.7) !important; /* Restore subtle glow effect */
     }
 }
 

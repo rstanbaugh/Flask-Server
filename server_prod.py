@@ -1,7 +1,11 @@
 # conda environment flask
 # python version 3.11.2
 # plan to deploy on raspberry pi
-# will use nginx on pi for reverse proxy ssl
+# will use the following tools:
+#   flask back end
+#   gunicorn to serve the flask app
+#   nginx on pi for reverse proxy
+#   self signed ssl for local development
 
 from flask import Flask
 from routes.routes import routes_bp
