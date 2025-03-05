@@ -4,6 +4,14 @@
 # Navigate to the project directory
 cd ~/Flask-Server
 
+# Ensure TEMPEST_API_KEY is set
+if [ -z "$TEMPEST_API_KEY" ]; then
+    export TEMPEST_API_KEY="3903262d-2961-4990-a273-5fb165bb8cb1"
+    echo "✅ TEMPEST_API_KEY set."
+else
+    echo "TEMPEST_API_KEY already set."
+fi
+
 # Activate the virtual environment if not already active
 if [ -z "$VIRTUAL_ENV" ]; then
     source ./flask/bin/activate
@@ -15,7 +23,7 @@ fi
 
 # Check if Gunicorn is already running
 if pgrep -f "gunicorn" > /dev/null; then
-    echo "Gunicorn server is already running!"
+    echo "⚠️ Gunicorn server is already running!"
     exit 1
 fi
 

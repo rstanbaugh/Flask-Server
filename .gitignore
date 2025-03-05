@@ -1,61 +1,65 @@
-# macOS-specific files
+# === macOS-specific files ===
 .DS_Store
 *.DS_Store
 
-# Python compiled files
-__pycache__
+# === Python compiled files ===
+__pycache__/
 *.pyc
 *.pyo
 *.pyd
 
-# Virtual environment files (Conda or pip)
+# === Environment variables ===
+.env
+*.env
+
+# === Virtual Environment (Conda, pip, Raspberry Pi) ===
 venv/
 env/
 .venv/
 *.venv/
 env_*_*
-
-# IDE-specific files (e.g., VS Code, but keeping .vscode/tasks.json if shared)
-# Uncomment if you want to ignore all .vscode files (recommended for user-specific settings):
-#.vscode/
-# Keep tasks.json if you want to share it across team members:
-!.vscode/tasks.json
-
-# Python egg files
-*.egg
-*.egg-info
-
-# Distribution / packaging
-dist/
-build/
-*.egg
-*.egg-info
-*.dist-info/
-*.pyinstaller/
-
-# Dependency caches and files
-pip-wheel-metadata/
-*.pyc
-
-# Temporary files and logs
-*.log
-*.tmp
-*.bak
-
-# SQLite databases (if any in your project)
-*.db
-*.sqlite
-
-# Raspberry Pi-specific files (optional, if generated during testing)
 pi_venv/
 *.pi_venv/
 
-# Empty or unused files (if no longer needed)
-project_files.txt
-
-# Ignore any test or coverage reports (if applicable)
+# === Flask & Backend ===
+instance/
+*.log
+*.tmp
+*.bak
+*.sqlite
+*.db
+*.sqlite3
+*.pytest_cache/
 .coverage
 htmlcov/
 .tox/
 nosetests.xml
 pytest.xml
+
+# === Node.js & React Frontend ===
+node_modules/
+frontend/node_modules/
+frontend/.parcel-cache/
+frontend/build/
+npm-debug.log*
+yarn-error.log*
+.pnp/
+.pnp.js
+.eslintcache
+
+# === Dependency Caches ===
+pip-wheel-metadata/
+*.egg
+*.egg-info/
+*.dist-info/
+*.pyinstaller/
+
+# === IDE / Editor-Specific Files ===
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# === Git Ignore ===
+.gitmodules
+.project_files.txt
